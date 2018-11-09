@@ -1,0 +1,28 @@
+<div id="item">
+  <div class="container">
+
+    <%= image_tag(@item.img_url, class: "center") %>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @item.name %>
+    </p>
+
+    <p>
+      <strong>Color:</strong>
+      <%= @item.color %>
+    </p>
+
+    <p>
+      <strong>Width:</strong>
+      <%= @item.width %>
+    </p>
+
+    <p>
+      <strong>Height:</strong>
+      <%= @item.height %>
+    </p>
+
+    <%= link_to 'Back', items_path %>
+  </div>
+</div>

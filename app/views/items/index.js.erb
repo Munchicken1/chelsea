@@ -1,0 +1,11 @@
+// Append new data
+$("<%j @items.each do |product| %><div class="col-md-3 col-sm-3 wow fadeIn"data-wow-delay="0.3"><%=j link_to image_tag(product.img_url, class: "item-list", alt: "product img"), item_path(product) %></div><%j end %>")
+  .appendTo($(".infinite-table table"));
+
+// Update pagination link
+<% if @items.last_page? %>
+  $('.pagination').html("That's all, folks!");
+<% else %>
+  $('.pagination')
+    .html("<%=j link_to_next_page(@items, 'Next Page', :remote => true) %>");
+<% end %>
