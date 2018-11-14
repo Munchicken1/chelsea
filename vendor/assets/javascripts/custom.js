@@ -1,37 +1,3 @@
-/*
-// google map
-var map = '';
-var center;
-
-function initialize() {
-    var mapOptions = {
-      zoom: 18,
-      center: new google.maps.LatLng(42.209170,-88.078955),
-      scrollwheel: false
-    };
-
-    map = new google.maps.Map(document.getElementById('map-canvas'),  mapOptions);
-
-    google.maps.event.addDomListener(map, 'idle', function() {
-        calculateCenter();
-    });
-
-    google.maps.event.addDomListener(window, 'resize', function() {
-        map.setCenter(center);
-    });
-}
-
-function calculateCenter() {
-  center = map.getCenter();
-}
-//API: key=AIzaSyDY38H8iOF9OI46C-QMvnh9DADCzKbik8k
-function loadGoogleMap(){
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDY38H8iOF9OI46C-QMvnh9DADCzKbik8k&' + 'callback=initialize';
-    document.body.appendChild(script);
-}
-*/
 // Flexslider
 $(function(){
   /* FlexSlider */

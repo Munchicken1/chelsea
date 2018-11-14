@@ -14,6 +14,7 @@
 //= require jquery
 //= require bootstrap.min
 //= require jquery.infinite-pages
+//= require parallax
 
 //= require isotope
 //= require imagesloaded.min

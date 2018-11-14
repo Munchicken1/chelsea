@@ -11,7 +11,8 @@
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
-#
+require 'elasticsearch/extensions/test/cluster'
+require 'yaml'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -44,55 +45,6 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
-
-
-
-  # spec/spec_helper.rb
-  require 'elasticsearch/extensions/test/cluster'
-  require 'yaml'
-  RSpec.configure do |config|
-    ...
-    # Start an in-memory cluster for Elasticsearch as needed
-    es_config = YAML.load_file("config/elasticsearch.yml")["test"]
-    ES_BIN = es_config["es_bin"]
-    ES_PORT = es_config["port"]
-  config.before :all, elasticsearch: true do
-      Elasticsearch::Extensions::Test::Cluster.start(command: ES_BIN, port: ES_PORT.to_i, nodes: 1, timeout: 120)  unless Elasticsearch::Extensions::Test::Cluster.running?(command: ES_BIN, on: ES_PORT.to_i)
-    end
-  # Stop elasticsearch cluster after test run
-    config.after :suite do
-      Elasticsearch::Extensions::Test::Cluster.stop(command: ES_BIN, port: ES_PORT.to_i, nodes: 1) if Elasticsearch::Extensions::Test::Cluster.running?(command: ES_BIN, on: ES_PORT.to_i)
-    end
-  # Create indexes for all elastic searchable models
-    config.before :each, elasticsearch: true do
-      ActiveRecord::Base.descendants.each do |model|
-        if model.respond_to?(:__elasticsearch__)
-          begin
-            model.__elasticsearch__.create_index!
-            model.__elasticsearch__.refresh_index!
-          rescue => Elasticsearch::Transport::Transport::Errors::NotFound
-            # This kills "Index does not exist" errors being written to console
-          rescue => e
-            STDERR.puts "There was an error creating the elasticsearch index for #{model.name}: #{e.inspect}"
-          end
-        end
-      end
-    end
-  # Delete indexes for all elastic searchable models to ensure clean state between tests
-    config.after :each, elasticsearch: true do
-      ActiveRecord::Base.descendants.each do |model|
-        if model.respond_to?(:__elasticsearch__)
-          begin
-            model.__elasticsearch__.delete_index!
-          rescue => Elasticsearch::Transport::Transport::Errors::NotFound
-            # This kills "Index does not exist" errors being written to console
-          rescue => e
-            STDERR.puts "There was an error removing the elasticsearch index for #{model.name}: #{e.inspect}"
-          end
-        end
-      end
-    end
-  end
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
@@ -142,4 +94,46 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+ENV["TEST_CLUSTER_NODES"] = "1" # need to set so we trigger correct ES defaults
+
+  # Start an in-memory cluster for Elasticsearch as needed
+  es_config = YAML.load_file("config/elasticsearch.yml")["test"]
+  ES_BIN = es_config["es_bin"]
+  ES_PORT = es_config["port"]
+  config.before :all, elasticsearch: true do
+  Elasticsearch::Extensions::Test::Cluster.start(command: ES_BIN, port: ES_PORT.to_i, nodes: 1, timeout: 120)  unless Elasticsearch::Extensions::Test::Cluster.running?(command: ES_BIN, on: ES_PORT.to_i)
+  end
+  # Stop elasticsearch cluster after test run
+  config.after :suite do
+  Elasticsearch::Extensions::Test::Cluster.stop(command: ES_BIN, port: ES_PORT.to_i, nodes: 1) if Elasticsearch::Extensions::Test::Cluster.running?(command: ES_BIN, on: ES_PORT.to_i)
+  end
+  # Create indexes for all elastic searchable models
+  config.before :each, elasticsearch: true do
+  ActiveRecord::Base.descendants.each do |model|
+    if model.respond_to?(:__elasticsearch__)
+      begin
+        model.__elasticsearch__.create_index!
+        model.__elasticsearch__.refresh_index!
+      rescue => Elasticsearch::Transport::Transport::Errors::NotFound
+        # This kills "Index does not exist" errors being written to console
+      rescue => e
+        STDERR.puts "There was an error creating the elasticsearch index for #{model.name}: #{e.inspect}"
+      end
+    end
+  end
+  end
+  # Delete indexes for all elastic searchable models to ensure clean state between tests
+  config.after :each, elasticsearch: true do
+  ActiveRecord::Base.descendants.each do |model|
+    if model.respond_to?(:__elasticsearch__)
+      begin
+        model.__elasticsearch__.delete_index!
+      rescue => Elasticsearch::Transport::Transport::Errors::NotFound
+        # This kills "Index does not exist" errors being written to console
+      rescue => e
+        STDERR.puts "There was an error removing the elasticsearch index for #{model.name}: #{e.inspect}"
+      end
+    end
+  end
+  end
 end

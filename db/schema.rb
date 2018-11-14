@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_154411) do
+ActiveRecord::Schema.define(version: 2018_11_12_210647) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2018_11_06_154411) do
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["color"], name: "index_items_on_color"
+    t.index ["condition"], name: "index_items_on_condition"
+    t.index ["height"], name: "index_items_on_height"
+    t.index ["name"], name: "index_items_on_name"
+    t.index ["rabbet"], name: "index_items_on_rabbet"
+    t.index ["width"], name: "index_items_on_width"
   end
 
 end

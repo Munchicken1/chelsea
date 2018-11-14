@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
-    @items = Item.order('items.name ASC').paginate(:page => params[:page], :per_page => 20)
+    @items = Item.paginate(:page => params[:page], :per_page => 32)
+    # .order('items.name ASC')
     # respond_to do |format|
     #   format.xlsx {
     #     response.headers[
@@ -16,6 +17,14 @@ class ItemsController < ApplicationController
     #   format.html {render :index}
     # end
   end
+
+  # @items = Item.search '*',
+  #     facets: [:name],
+  #     order: [
+  #       { date: { order: :desc}}
+  #     ],
+  #     page: params[:page],
+  #     per_page: 12
 
 
   # CSV.foreach("/public/Book1.csv", :headers => true) do |row|
@@ -84,6 +93,12 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
     end
 
+    def search
+      @item = Item.search(param[:name])
+      @items.each do |product|
+        puts product.name
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:id, :name, :color, :width, :height, :rabbet, :pcs, :ft, :condition, :img_url)
