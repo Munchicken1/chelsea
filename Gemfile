@@ -12,6 +12,7 @@ end
 group :production do
   gem 'pg'
 end
+gem 'rack', '>=2.0.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -80,8 +81,8 @@ gem 'execjs'
 gem 'mini_racer', platforms: :ruby
 
 # Elasticsearch integration
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+# gem 'elasticsearch-model'
+# gem 'elasticsearch-rails'
 
 # Data imports from outside source
 # gem 'roo', '~> 2.7.0'

@@ -6,6 +6,65 @@ http://www.tooplate.com/view/2081-solution
 
 */
 
+/* Search bar start */
+#product p{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position:absolute;
+	left: 17%;
+	bottom: 20%;
+}
+
+.searchTerm {
+  float: left;
+  width: 80%;
+  border: 2px solid #02ac92;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #02ac92;
+}
+
+.searchButton {
+	position: absolute;
+  right: 25px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #02ac92;
+  background: #02ac92;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchButton:hover{
+	color:#02ac92;
+	background-color:#fff;
+	border-color:#009a9a;
+	transition: ease 0.6s;
+}
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: relative;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+/* Search bar ends */
+
 /* Bootstrap Secondary-Button color */
 .btn-secondary{color:#fff;background-color:#02ac91;border-color:#005a5a}
 

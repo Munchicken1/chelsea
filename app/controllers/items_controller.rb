@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
-    @items = Item.paginate(:page => params[:page], :per_page => 32)
+    @items = Item.all.search(params[:search]).paginate(:page => params[:page], :per_page => 32)
     # .order('items.name ASC')
     # respond_to do |format|
     #   format.xlsx {
