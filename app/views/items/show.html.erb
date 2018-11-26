@@ -1,28 +1,44 @@
 <div id="item">
   <div class="container">
 
-    <%= image_tag(@item.img_url, class: "center") %>
+    <%= image_tag(@item.img_url, class: "center img-responsive") %>
+    <h1>Moulding Details</h1>
+    <hr>
+    <div class="row">
+      <div class="col-lg-6">
+        <p>
+          <strong>Name:</strong>
+          <%= @item.name %>
+        </p>
 
-    <p>
-      <strong>Name:</strong>
-      <%= @item.name %>
-    </p>
+        <p>
+          <strong>Color:</strong>
+          <%= @item.color %>
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <p>
+          <strong>Width:</strong>
+          <%= @item.width %> "
+        </p>
 
-    <p>
-      <strong>Color:</strong>
-      <%= @item.color %>
-    </p>
+        <p>
+          <strong>Height:</strong>
+          <%= @item.height %> "
+        </p>
 
-    <p>
-      <strong>Width:</strong>
-      <%= @item.width %>
-    </p>
-
-    <p>
-      <strong>Height:</strong>
-      <%= @item.height %>
-    </p>
-
-    <%= link_to 'Back', items_path %>
+        <p>
+          <strong>Rabbet:</strong>
+          <%= @item.rabbet %> "
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div style = "padding-left: 200px;">
+          <%= link_to 'Back', url_for(:back), class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -24,7 +24,12 @@ ActiveRecord::Schema.define(version: 2018_11_15_210626) do
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["color"], name: "index_items_on_color"
+    t.index ["condition"], name: "index_items_on_condition"
+    t.index ["height"], name: "index_items_on_height"
     t.index ["name"], name: "index_items_on_name"
+    t.index ["rabbet"], name: "index_items_on_rabbet"
+    t.index ["width"], name: "index_items_on_width"
   end
 
 end

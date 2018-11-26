@@ -118,7 +118,6 @@ http://www.tooplate.com/view/2081-solution
   transform: translate(-50%,0);
   pointer-events: none
 } */
-
 body
 	{
 		background: #ffffff;
@@ -136,6 +135,71 @@ p
     {
         line-height: 26px;
     }
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+
+#scroll i {
+  display: block;
+  color: #02ac91;
+}
+#scroll .arrow {
+  text-align: center;
+}
+
+#scroll .bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
 
 /* start all section */
 #service, #divider, #about, #team, #newsletter,
@@ -220,6 +284,17 @@ p
 #item img{
 	width: 750px;
 	height: 450px;
+}
+
+#item h1{
+  text-indent: 185px;
+  font-variant-caps: small-caps;
+  font-weight: bold;
+}
+#item p{
+  font-size: 20px;
+  font-family: sans-serif, Verdana;
+  text-indent: 180px;
 }
 
 /* start home */
@@ -334,6 +409,10 @@ p
 /* end service */
 
 /* start divider */
+#divider mark {
+  background-color: #02ac91;
+}
+
 #divider
     {
         background: url('../assets/divider.jpg');
@@ -341,6 +420,7 @@ p
         background-size: cover;
         background-repeat: no-repeat;
         color: #FFFFFF;
+        padding-left: 50px;
     }
 #divider h2
     {
@@ -908,6 +988,11 @@ footer p
 				font-variant-caps: small-caps;
 				text-align: center;
     }
+
+footer .text {
+    font-family: sans-serif, arial;
+    font-variant-caps: normal;
+}
 footer .social-icon
     {
         top: 0px;
