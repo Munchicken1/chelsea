@@ -7,10 +7,7 @@ http://www.tooplate.com/view/2081-solution
 */
 
 /* Search bar start */
-#product p{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-}
+
 
 .search {
   width: 100%;
@@ -118,6 +115,16 @@ http://www.tooplate.com/view/2081-solution
   transform: translate(-50%,0);
   pointer-events: none
 } */
+
+.parallax {
+  background-image: url("stock2.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: 50% 230%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body
 	{
 		background: #ffffff;
@@ -202,13 +209,18 @@ p
 }
 
 /* start all section */
-#service, #divider, #about, #team, #newsletter,
- #product, #pform, #client, #contact, #item
+#divider, #about, #pform, #contact, #item
     {
         padding-top: 100px;
         padding-bottom: 100px;
         position: relative;
     }
+
+#service {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  position: relative;
+}
 /* end all section */
 
 /* start nagivation */
@@ -273,6 +285,25 @@ p
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus { background-color: transparent }
 /* end navigation */
+
+/* start service */
+#service .media {
+  padding: 10px;
+}
+
+#service .media .fa {
+  color: #202020;
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+#service .media .media-heading {
+  border-bottom: 2px solid #202020;
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+/* end service */
 
 /* start item */
 #item .center{
@@ -388,26 +419,6 @@ p
 
 /* end home */
 
-/* start service */
-#service .media
-    {
-        padding: 10px;
-    }
-#service .media .fa
-    {
-        color: #202020;
-        font-size: 40px;
-        margin-right: 20px;
-    }
-#service .media .media-heading
-    {
-        border-bottom: 2px solid #202020;
-        font-weight: 600;
-        font-size: 20px;
-        padding-bottom: 10px;
-    }
-/* end service */
-
 /* start divider */
 #divider mark {
   background-color: #02ac91;
@@ -473,95 +484,24 @@ p
     }
 /* end about */
 
-/* start team */
-#team
-    {
-        border-top: 1px solid #f6f6f6;
-        border-bottom: 1px solid #f6f6f6;
-        text-align: center;
-    }
-#team h2
-    {
-        padding-bottom: 30px;
-    }
-#team img
-    {
-        border: 1px solid #f6f6f6;
-        display: inline-block;
-        padding: 10px;
-        transition: all 0.4s ease-in;
-    }
-#team img:hover
-    {
-        opacity: 0.4;
-        cursor: pointer;
-    }
-#team h3
-    {
-        color: #02ac91;
-        padding-bottom: 10px;
-    }
-#team h4
-    {
-        font-size: 14px;
-        padding-top: 20px;
-        line-height: 0px;
-    }
-/* end team */
-
-/* start newsletter */
-#newsletter
-    {
-        background: url('../assets/newsletter-bg.jpg') center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: #ffffff;
-        text-align: center;
-        padding-top: 120px;
-        padding-bottom: 120px;
-    }
-#newsletter p
-    {
-        padding-bottom: 30px;
-    }
-#newsletter .btn
-    {
-        background: transparent;
-        border-radius: 0px;
-        color: #ffffff;
-        margin-top: 40px;
-    }
-#newsletter .form-control
-    {
-        background: transparent;
-        border-color: #f2f2f2;
-        border-radius: 0px;
-        color: #ffffff;
-        height: 50px;
-    }
-#newsletter input[type="submit"]
-    {
-        background: #02ac91;
-        border: 2px solid transparent;
-        color: #ffffff;
-    }
-#newsletter .form-control::-moz-placeholder {
-  color: #ffffff;
-  opacity: 1;
-}
-#newsletter .form-control:-ms-input-placeholder {
-  color: #ffffff;
-}
-#newsletter .form-control::-webkit-input-placeholder {
-  color: #ffffff;
-}
-/* end newsletter */
-
 /* start product */
-#product .modal-body img{
-	width: 550px;
-	height: 450px;
-	position:static;
+#product a {
+  color: #02ac91;
+  font-variant-caps: small-caps;
+
+
+}
+
+#product p{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#product .tab {
+
+  text-align: left;
+  padding: 15px;
+  font-size: 17pt;
 }
 
 #product .pagination a {
@@ -607,13 +547,6 @@ p
 	text-align: center;
 }
 
-#product .modal-body img:hover{
-	cursor: default;
-	border-radius: 0%;
-	transform:none;
-}
-
-
 #product h3, p {
 	padding-left: 10px;
 }
@@ -621,6 +554,7 @@ p
 #product h2 {
 	font-variant-caps: small-caps;
 	font-size: 45px;
+  text-align: left;
 }
 
 #product img
@@ -648,68 +582,6 @@ p
         padding: 0;
         margin: 0;
     }
-#product .plan
-  {
-    border: 1px solid #f6f6f6;
-    margin-top: 100px;
-    transition: all 0.4s ease-in;
-    padding: 40px;
-  }
-#product .plan_one
- {
-    margin-top: 60px;
- }
-#product .plan_two
- {
-    margin-top: 80px;
- }
-#product .plan_three
- {
-    margin-top: 40px;
- }
-#product .plan_four
- {
-    margin-top: 0px;
- }
-#product .plan:hover
-  {
-    background: #202020;
-    color: #ffffff;
-    transform: scale(1.0);
-  }
-#product .plan .plan_title
-  {
-    border-bottom: 1px solid #f6f6f6;
-    color: #9bc848;
-    font-size: 30px;
-    padding: 20px;
-  }
-#product .plan ul
-  {
-    padding: 0;
-  }
-#product .plan ul li
-  {
-    display: block;
-    padding: 20px 0 20px 0;
-  }
-#product .plan .btn
-  {
-    background: #02ac91;
-    border: none;
-    border-radius: 2px;
-    font-weight: bold;
-    font-size: 12px;
-    width: 120px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition: all 0.4s ease-in-out;
-  }
-#product .plan .btn:hover
-  {
-    background: #FFFFFF;
-    color: #66AF33;
-  }
 /* end product */
 
 /* start pform */

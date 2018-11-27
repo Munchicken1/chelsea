@@ -1,10 +1,14 @@
 <!-- start product -->
+<div class="parallax"></div>
 <div id="product">
-    <div class="container centered">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="wow bounce">Products</h2>
-
+  <div class="container centered">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="wow bounce">Products</h2>
+        <div class="tab">
+          <%= link_to "All", items_index_path %>
+          <%= link_to "Close-Outs", items_closeout_path, class: "indented" %>
+        </div>
 
         <div class="wrap">
           <%= form_tag items_path, :class => "search", :method => 'get' do %>
@@ -20,6 +24,8 @@
           <% end %>
         </div>
           <hr>
+
+
           <% @items.each do |product| %>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
 
@@ -32,7 +38,7 @@
         </div>
       </div>
       <div class="pagination">
-        <%= will_paginate @items %>
+        <%= will_paginate @items, inner_window: 2, outer_window: 0 %>
       </div>
     </div>
 </div>
