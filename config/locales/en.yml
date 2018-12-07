@@ -35,7 +35,3 @@ en:
     previous_label: "&#171;"
     next_label: "&#187;"
     page_gap: "&hellip;"
-
-    emailer_mailer:
-      email_me:
-        subject: "Email from www.chelseaframingproducts.com"
