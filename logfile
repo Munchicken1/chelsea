@@ -1,0 +1,17 @@
+2018-12-07 16:26:57.824 CST [83510] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-12-07 16:26:57.824 CST [83510] LOG:  listening on IPv6 address "::1", port 5432
+2018-12-07 16:26:57.825 CST [83510] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-12-07 16:26:57.842 CST [83511] LOG:  database system was shut down at 2018-12-07 16:26:25 CST
+2018-12-07 16:26:57.845 CST [83510] LOG:  database system is ready to accept connections
+2018-12-07 16:27:03.771 CST [83639] FATAL:  database "myapp_development" does not exist
+2018-12-07 16:27:54.113 CST [83648] FATAL:  database "myapp_development" does not exist
+2018-12-07 16:28:07.445 CST [83769] FATAL:  database "chelseaframingproducts_development" does not exist
+2018-12-07 16:28:53.750 CST [84021] FATAL:  database "chelsea_development" does not exist
+2018-12-07 16:30:53.763 CST [83510] LOG:  could not open file "postmaster.pid": No such file or directory
+2018-12-07 16:30:53.763 CST [83510] LOG:  performing immediate shutdown because data directory lock file is invalid
+2018-12-07 16:30:53.763 CST [83510] LOG:  received immediate shutdown request
+2018-12-07 16:30:53.763 CST [83510] LOG:  could not open file "postmaster.pid": No such file or directory
+2018-12-07 16:30:53.763 CST [83515] WARNING:  terminating connection because of crash of another server process
+2018-12-07 16:30:53.763 CST [83515] DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+2018-12-07 16:30:53.763 CST [83515] HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+2018-12-07 16:30:53.766 CST [83510] LOG:  database system is shut down

@@ -6,6 +6,7 @@
 #
 default: &default
   adapter: sqlite3
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
@@ -18,8 +19,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: db/development.sqlite3
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: chelseaframingproducts_production
+  username: chelseaframingproducts
+  password: <%= ENV['CHELSEAFRAMINGPRODUCTS_DATABASE_PASSWORD'] %>
