@@ -4,6 +4,8 @@
   </div>
   <!- - end google map -->
 
+<body class="contactnav">
+<div class="parallaxc">
 
 <!-- embed map - ->
   https://www.google.com/maps/embed/v1/place
@@ -14,47 +16,48 @@
     <div class="container" style="padding-top: 85px">
       <div class="row">
         <div class="col-md-3 col-sm-4 wow fadeInIn" data-wow-delay="0.3s">
-          <h2>
+          <!-- <h2>
             <div class="background">
             <strong>Chelsea Framing Products Inc.</strong>
             </div>
-          </h2>
+          </h2> -->
         </div>
         <div class="col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
           <address>
             <h3>Visit Office</h3>
             <p>
               <i class="fa fa-map-marker too-icon"></i>
-              333 Enterprise Pkwy, Lake Zurich</p>
+              333 Enterprise Pkwy
+            </p>
+            <p style="padding-left: 50px;"> Lake Zurich, IL 60047</p>
             <p>
               <i class="fa fa-phone too-icon"></i>
-              Order & Customer Service:</br>
-          </p>
-          <p class="indented" style="padding-left: 65pt;">800-866-5431</br>
-        </p>
-        <p class="indented">Office: 847-550-5556
-        </p>
+              Order & Customer Service:
+            </p>
+            <p style="padding-left: 50px;">847-550-5556
+            </p>
         <p>
           <i class="fa fa-envelope-o too-icon"></i>
           <%= mail_to "sales@chelseaframingproducts.com"%>
         </p>
       </address>
     </div>
-    <form action="#" method="post" class="col-md-6 col-sm-4" id="contact-form" role="form">
+    <form action="https://formspree.io/sales@chelseaframingproducts.com" method="POST" class="col-md-6 col-sm-4">
       <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-        <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+        <input type="text" name="name" class="form-control" placeholder="Your Name">
       </div>
       <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-        <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+        <input type="email" name="email" class="form-control" placeholder="Your Email">
       </div>
       <div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-        <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
+        <textarea rows="5" name="message" class="form-control" placeholder="Message"></textarea>
       </div>
-      <div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-        <input name="submit" type="submit" class="form-control" id="submit" value="Send">
+      <div class="col-md-offset-6 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+        <input type="submit" value="Send" class="form-control">
       </div>
     </form>
   </div>
+</div>
 </div>
 </div>
 <!-- end contact -->
@@ -65,10 +68,10 @@
   width="100%"
   height="320"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
+  src="https://www.google.com/maps/embed/v1/place?key=
     &q=place_id:ChIJby_IcxCiD4gRLrBgFU2dufU" allowfullscreen>
 </iframe>
-
+</body>
 
 <!-- Google Map Satellite Mode -->
 

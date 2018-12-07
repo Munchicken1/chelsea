@@ -18,8 +18,9 @@ class ItemsController < ApplicationController
   end
 
   def closeout
-    @items = Item.all.search(params[:search]).paginate(:page => params[:page], :per_page => 80)
+    @items = Item.all.search(params[:search])
   end
+
   # @items = Item.search '*',
   #     facets: [:name],
   #     order: [
@@ -42,6 +43,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @emailer = Emailer.new
   end
 
   # GET /items/1/edit
@@ -103,6 +105,6 @@ class ItemsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:id, :name, :color, :width, :height, :rabbet, :pcs, :ft, :condition, :img_url)
+      params.require(:item).permit(:id, :name, :color, :width, :height, :rabbet, :pcs, :ft, :condition, :img_url, :category)
     end
 end

@@ -11,16 +11,16 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right shift">
         <li>
-          <%= link_to "HOME", root_path %>
+          <%= link_to "HOME", root_path, class: "homenav" %>
         </li>
         <li>
-          <%= link_to "ABOUT", static_pages_about_path %>
+          <%= link_to "ABOUT", static_pages_about_path, class:"aboutnav" %>
         </li>
         <li>
-          <%= link_to "PRODUCT", items_index_path %>
+          <%= link_to "PRODUCT", items_index_path, class:"productnav" %>
         </li>
         <li>
-          <%= link_to "CONTACT", static_pages_contact_path %>
+          <%= link_to "CONTACT", static_pages_contact_path, class:"contactnav" %>
         </li>
       </ul>
     </div>

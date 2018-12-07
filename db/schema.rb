@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2018_11_15_210626) do
     t.integer "ft"
     t.string "condition"
     t.string "img_url"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_items_on_category"
     t.index ["color"], name: "index_items_on_color"
     t.index ["condition"], name: "index_items_on_condition"
     t.index ["height"], name: "index_items_on_height"

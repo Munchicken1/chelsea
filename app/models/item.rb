@@ -11,9 +11,17 @@ class Item < ApplicationRecord
 
     def self.search(search)
       if search
-        where('name LIKE ? OR color LIKE ?', "%#{search}%", "%#{search}%")
+        where('name LIKE ? OR color LIKE ? OR category LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
       else
         all
       end
     end
+
+    # def self.colorsearch(colorsearch)
+    #   if colorsearch
+    #     where('color LIKE ?', "%#{colorsearch}%")
+    #   else
+    #     all
+    #   end
+    # end
 end

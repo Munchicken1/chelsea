@@ -32,6 +32,10 @@
 en:
   hello: "Hello world"
   will_paginate:
-    previous_label: "&#171;Previous"
-    next_label: "Next &#187;"
+    previous_label: "&#171;"
+    next_label: "&#187;"
     page_gap: "&hellip;"
+
+    emailer_mailer:
+      email_me:
+        subject: "Email from www.chelseaframingproducts.com"

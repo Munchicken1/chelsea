@@ -2,7 +2,7 @@
   <div class="container">
 
     <%= image_tag(@item.img_url, class: "center img-responsive") %>
-    <h1>Moulding Details</h1>
+    <h1>Moulding Detail</h1>
     <hr>
     <div class="row">
       <div class="col-lg-6">
@@ -16,29 +16,31 @@
           <%= @item.color %>
         </p>
       </div>
+
       <div class="col-lg-6">
         <p>
           <strong>Width:</strong>
-          <%= @item.width %> "
+          <%= @item.width %>
+          "
         </p>
 
         <p>
           <strong>Height:</strong>
-          <%= @item.height %> "
+          <%= @item.height %>
+          "
         </p>
 
         <p>
           <strong>Rabbet:</strong>
-          <%= @item.rabbet %> "
+          <%= @item.rabbet %>
+          "
         </p>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div style = "padding-left: 200px;">
-          <%= link_to 'Back', url_for(:back), class: "btn btn-secondary" %>
-        </div>
       </div>
+      <div class="row">
+        <div class="col-12" style="padding-left: 205px;">
+        <%= link_to 'Back', url_for(:back), class: "btn btn-secondary" %>
+        </div>
     </div>
   </div>
 </div>
