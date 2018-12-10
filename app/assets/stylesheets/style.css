@@ -880,7 +880,7 @@ footer .social-icon {
     .flexslider h2 { font-size: 24px; }
 }
 
-/* start templatemo 768 media quires */
+/* start templatemo 768 media quires (mobile) */
 @media only screen and ( max-width: 768px ) {
     .navbar-default .navbar-brand { margin-left: 20px; }
     .navbar-default .navbar-nav { margin: 0; }
