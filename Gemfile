@@ -88,7 +88,6 @@ gem 'mini_racer', platforms: :ruby
 # gem 'roo', '~> 2.7.0'
 
 gem 'jquery-infinite-pages'
-gem 'kaminari'
 gem 'will_paginate'
 
 # Image sizing
@@ -96,3 +95,4 @@ gem 'image_magick'
 
 # Works as a wrapper on top of ElasticSearch and provides robust searching as well as many other facilities
 gem 'searchkick'
+gem 'non-digest-assets'

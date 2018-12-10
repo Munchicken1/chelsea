@@ -6,6 +6,5 @@ class AddIndex < ActiveRecord::Migration[5.2]
     add_index :items, :height
     add_index :items, :rabbet
     add_index :items, :condition
-    add_index :items, :category
   end
 end
