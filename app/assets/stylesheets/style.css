@@ -914,6 +914,15 @@ footer .social-icon {
     #divider h3 {
         line-height: 30pt;
     }
+    #divider .divlink a {
+        font-size: 14pt;
+    }
+    #divider h2 {
+        font-size: 35px;
+    }
+    #divider h3 {
+        font-size: 20px;
+    }
     .parallaxc {
         height: 850px;
     }
