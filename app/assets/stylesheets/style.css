@@ -913,15 +913,22 @@ footer .social-icon {
     }
     #divider h3 {
         line-height: 30pt;
+        padding-bottom: 5px;
     }
     #divider .divlink a {
-        font-size: 14pt;
+        font-size: 12pt;
+    }
+    #divider {
+        padding-left: 20px;
     }
     #divider h2 {
-        font-size: 35px;
+        font-size: 30px;
     }
     #divider h3 {
-        font-size: 20px;
+        font-size: 15px;
+    }
+    #divider p {
+        font-size: 8pt;
     }
     .parallaxc {
         height: 850px;
