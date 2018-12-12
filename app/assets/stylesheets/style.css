@@ -730,10 +730,12 @@ body.closeo a.closeo {
 
 #contact2 a {
     color: #FFF;
+    font-size: 8pt;
 }
 
 #contact2 p {
     line-height: 5px;
+    font-size: 12pt;
 }
 /* end contact2 */
 
@@ -944,9 +946,11 @@ footer .social-icon {
     }
     .parallaxa {
         background-attachment: inherit;
+        max-height: 300px;
     }
     .parallax {
         background-attachment: inherit;
+        max-height: 300px;
     }
 }
 /* end templatemo 768 media quires */
