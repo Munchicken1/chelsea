@@ -739,7 +739,7 @@ body.closeo a.closeo {
 
 #contact2 p {
     line-height: 5px;
-    font-size: 12pt;
+    font-size: 10pt;
 }
 /* end contact2 */
 
@@ -955,6 +955,22 @@ footer .social-icon {
     .parallax {
         background-attachment: inherit;
         max-height: 300px;
+    }
+
+    #item img{
+      	width: 333px;
+      	height: 200px;
+    }
+
+    #item h1{
+        text-indent: 0px;
+        font-variant-caps: small-caps;
+        font-weight: bold;
+    }
+    #item p{
+        font-size: 20px;
+        font-family: sans-serif, Verdana;
+        text-indent: 0px;
     }
 }
 /* end templatemo 768 media quires */
