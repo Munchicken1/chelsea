@@ -380,11 +380,11 @@ body.contactnav a.contactnav{
 }
 .flexslider {
     margin: 0 0 60px;
-    background: #fff;
     padding: 0;
+    background: #FFF;
     position: relative;
     zoom: 1;
-    background-color: #371604;
+    background-color: #222;
     overflow: hidden;
     margin: 0;
 }
@@ -397,6 +397,7 @@ body.contactnav a.contactnav{
     min-width: 648px;
     min-height: 270px;
     display: block;
+    opacity: 0.8;
 }
 .flexslider .slides > li {
     display: none;
