@@ -284,7 +284,10 @@ p {
 	  text-decoration: none;
 	  border-bottom: 8px solid;
 }
-
+.navbar-header img {
+    max-height: 75px;
+    max-width: 160px;
+}
 :after, :before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
