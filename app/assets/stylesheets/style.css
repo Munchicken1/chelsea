@@ -32,16 +32,9 @@
 /* Dropdown ends */
 
 /* Search bar starts */
-.search {
-    width: 100%;
-    position:fixed;
-  	left: 17%;
-  	bottom: 20%;
-}
 
 .searchTerm {
-    float: left;
-    width: 80%;
+    width: 300px;
     border: 2px solid #02ac92;
     padding: 5px;
     height: 36px;
@@ -55,7 +48,6 @@
 }
 
 .searchButton {
-	  position: absolute;
     right: 25px;
     width: 40px;
     height: 36px;
@@ -76,11 +68,8 @@
 }
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-    width: 30%;
-    position: relative;
-    top: 50%;
-    left: 80%;
-    transform: translate(-50%, -50%);
+    padding-right: 23px;
+    text-align: right;
 }
 /* Search bar ends */
 

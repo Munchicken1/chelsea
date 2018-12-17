@@ -8,13 +8,11 @@
           <h2 class="wow bounce">All Products</h2>
 
         <div class="wrap">
-          <%= form_tag items_path, :class => "search", :method => 'get' do %>
-          <p style="text-align: right;">
+          <%= form_tag items_path, :method => 'get' do %>
             <%= text_field_tag :search, params[:search], :placeholder => "Search by item# or color", :class => "searchTerm" %>
             <button type="submit" class='searchButton'>
               <i class="fa fa-search"></i>
             </button>
-          </p>
           <% end %>
         </div>
         <div class="dropit">
@@ -40,7 +38,7 @@
               <%= link_to image_tag(product.img_url, class: "item-list", alt: "product img"), item_path(product) %>
               <% if product.img_url == "https://i.postimg.cc/ZnyKB61B/img-soon.jpg" %>
               <p class="centered" style="background-color:#FFF; line-height: 2px; position:absolute;"><%= product.name %></p>
-        
+
               <% end %>
               <%# <% if product.condition == "new" %>
                 <!-- <span class="badge btn-success" style="background-color: #02ac91">New</span> -->
