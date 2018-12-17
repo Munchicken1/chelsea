@@ -343,6 +343,8 @@ body.contactnav a.contactnav{
 #item img{
   	width: 750px;
   	height: 450px;
+    display: block;
+    margin: 0 auto;
 }
 
 #item h1{
@@ -947,8 +949,10 @@ footer .social-icon {
     }
 
     #item img{
-      	width: 333px;
-      	height: 200px;
+        display: block;
+        margin: 0 auto;
+        width: 333px;
+        height: 200px;
     }
 
     #item h1{
@@ -960,6 +964,9 @@ footer .social-icon {
         font-size: 20px;
         font-family: sans-serif, Verdana;
         text-indent: 0px;
+    }
+    .searchTerm {
+        width: 208px;
     }
 }
 /* end templatemo 768 media quires */
