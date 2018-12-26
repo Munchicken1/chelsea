@@ -8,15 +8,23 @@ class Item < ApplicationRecord
     #     indexes :color, analyzer: 'english'
     #   end
     # end
-
-    def self.search(search)
-      if search
-        where('name ILIKE ? OR color ILIKE ? OR category ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
-      else
-        all
+    if Rails.env.production?
+      def self.search(search)
+        if search
+          where('name ILIKE ? OR color ILIKE ? OR category ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+        else
+          all
+        end
+      end
+    else
+      def self.search(search)
+        if search
+          where('name LIKE ? OR color LIKE ? OR category LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+        else
+          all
+        end
       end
     end
-
     # def self.colorsearch(colorsearch)
     #   if colorsearch
     #     where('color LIKE ?', "%#{colorsearch}%")
