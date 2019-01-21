@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc><%= @host %></loc>
+    </url>
+    <url>
+        <loc><%= "#{@host}#{static_pages_about_path}" %></loc>
+    </url>
+    <url>
+        <loc><%= "#{@host}#{static_pages_contact_path}" %></loc>
+    </url>
+    <url>
+        <loc><%= "#{@host}#{items_index_path}" %></loc>
+    </url>
+    <% @items.each do |item| %>
+        <url>
+            <loc><%= "#{@host}/items/#{item.id}" %></loc>
+        </url>
+    <% end %>
+
+</urlset>
