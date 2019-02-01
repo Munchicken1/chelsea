@@ -52,5 +52,9 @@
         <%= link_to 'Back', url_for(:back), class: "btn btn-secondary" %>
         </div>
     </div>
+      <% if @item.width == "N/A" || @item.color == "TBA" || @item.pcs == 0 || @item.color == "N/A" then %>
+        <p>Contact us for any missing information</p>
+      <% else %>
+      <% end %>
   </div>
 </div>
