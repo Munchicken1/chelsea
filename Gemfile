@@ -96,3 +96,6 @@ gem 'image_magick'
 # Works as a wrapper on top of ElasticSearch and provides robust searching as well as many other facilities
 gem 'searchkick'
 gem 'non-digest-assets'
+
+# TuneMyGC - Optimal MRI Ruby 2.1+ Garbage Collection
+gem 'tunemygc'
