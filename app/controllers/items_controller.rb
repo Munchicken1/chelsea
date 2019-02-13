@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     # end
   end
 
-  def closeout
+  def specials
     @items = Item.all.search(params[:search])
   end
 

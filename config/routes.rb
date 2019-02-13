@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   get 'static_pages/contact'
   get 'items/index'
-  get 'items/closeout'
+  get 'items/specials'
   get '/sitemap' => 'sitemaps#index'
   resources :items
 
