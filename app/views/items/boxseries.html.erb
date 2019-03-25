@@ -6,7 +6,7 @@
   <div class="container centered">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="wow bounce">Special Promotions</h2>
+        <h2 class="wow bounce">Box Series</h2>
 
         <div class="wrap">
           <%= form_tag items_specials_path, :method => 'get' do %>
@@ -39,7 +39,7 @@
           <hr>
 
 
-          <% @items.select{|product| product.condition == "closeout"}.each do |product| %>
+          <% @items.select{|product| product.mtype == "B"}.each do |product| %>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 wow fadeIn" style="padding-bottom: 50px;" data-wow-delay="0.1s">
               <%= link_to image_tag(product.img_url, class: "item-list", alt: "product img"), item_path(product) %>
               <% if product.img_url == "https://i.postimg.cc/ZnyKB61B/img-soon.jpg" && product.condition == "closeout" then %>
@@ -51,9 +51,6 @@
             </div>
           <% end %>
         </div>
-      </div>
-      <div class="pagination">
-        <%= will_paginate @items %>
       </div>
     </div>
 </div>

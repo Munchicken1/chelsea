@@ -567,7 +567,7 @@ body.contactnav a.contactnav{
 }
 #product .tab a {
     font-variant-caps: small-caps;
-    font-size: 20pt;
+    font-size: 17pt;
     padding: 15px;
     color: #02ac91;
     background: linear-gradient(to bottom, #02ac91 0%, #02ac91 100%);
@@ -880,6 +880,12 @@ footer .social-icon {
     .parallax {
         background-position: 25% 100%;
     }
+    #product .tab a {
+        font-size: 14pt;
+        line-height: 80px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 }
 
 /* start templatemo 768 media quires (mobile) */
@@ -906,6 +912,12 @@ footer .social-icon {
     }
     #product h2 {
         font-size: 35px;
+    }
+    #product .tab a {
+        font-size: 14pt;
+        line-height: 80px;
+        white-space: nowrap;
+        overflow: hidden;
     }
     #divider h3 {
         line-height: 30pt;

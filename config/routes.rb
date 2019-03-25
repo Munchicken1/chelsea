@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
   get 'items/index'
   get 'items/specials'
+  get 'items/smallseries'
+  get 'items/mediumseries'
+  get 'items/largeseries'
+  get 'items/boxseries'
+  get 'items/etcseries'
   get '/sitemap' => 'sitemaps#index'
   resources :items
 

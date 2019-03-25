@@ -18,6 +18,26 @@ class ItemsController < ApplicationController
   end
 
   def specials
+    @items = Item.all.search(params[:search]).paginate(:page => params[:page], :per_page => 186)
+  end
+
+  def smallseries
+    @items = Item.all.search(params[:search])
+  end
+
+  def mediumseries
+    @items = Item.all.search(params[:search])
+  end
+
+  def largeseries
+    @items = Item.all.search(params[:search])
+  end
+
+  def boxseries
+    @items = Item.all.search(params[:search])
+  end
+
+  def etcseries
     @items = Item.all.search(params[:search])
   end
 

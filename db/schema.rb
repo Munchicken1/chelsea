@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_151817) do
+ActiveRecord::Schema.define(version: 2019_03_25_165432) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_151817) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
+    t.string "mtype"
     t.index ["category"], name: "index_items_on_category"
     t.index ["color"], name: "index_items_on_color"
     t.index ["condition"], name: "index_items_on_condition"
