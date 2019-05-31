@@ -9,27 +9,27 @@
         <h2 class="wow bounce">Large Series</h2>
 
         <div class="wrap">
-          <%= form_tag items_specials_path, :method => 'get' do %>
-            <%= text_field_tag :search, params[:search], :placeholder => "Search from specials", :class => "searchTerm" %>
+          <%= form_tag items_path, :method => 'get' do %>
+            <%= text_field_tag :search, params[:search], :placeholder => "Search by item# or color", :class => "searchTerm" %>
             <button type="submit" class='searchButton'>
               <i class="fa fa-search"></i>
             </button>
           <% end %>
         </div>
         <div class="dropit">
-          <%= form_tag items_specials_path, :method => 'get' do %>
+          <%= form_tag items_path, :method => 'get' do %>
             <%= select_tag "search", options_for_select(Item.all.map {|t| [ t.color ]}.uniq.sort), prompt: "Search by color", class: "droppin" %>
             <%= submit_tag "Filter", class: "droppinbtn" %>
           <% end %>
 
-          <%= form_tag items_specials_path, :method => 'get', style: "padding-top: 5px;" do %>
+          <%= form_tag items_path, :method => 'get', style: "padding-top: 5px;" do %>
             <%= select_tag "search", options_for_select(["Less than 1 inch", "Between 1 and 2 inches", "Between 2 and 3 inches", "Greater than 3 inches"]), prompt: "Search by width", class: "droppin" %>
             <%= submit_tag "Filter", class: "droppinbtn" %>
           <% end %>
         </div>
         <div class="tab">
           <%= link_to "All", items_index_path %>
-          <%= link_to "Specials", items_specials_path, class: "closeo" %>
+          <%= link_to "Specials", items_specials_path, class: "closeo", style: "color: #B62202; font-weight: bold;" %>
           <%= link_to "S-Series", items_smallseries_path %>
           <%= link_to "M-Series", items_mediumseries_path %>
           <%= link_to "L-Series", items_largeseries_path %>
